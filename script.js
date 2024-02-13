@@ -2,7 +2,7 @@
 
 const titleElement = document.querySelector(".title");
 const buttonsContainer = document.querySelector(".buttons");
-const ДааButton = document.querySelector(".btn--Даа!");
+const ДааButton = document.querySelector(".btn--Даа");
 const НеаButton = document.querySelector(".btn--Неа");
 const catImg = document.querySelector(".cat-img");
 
@@ -26,7 +26,7 @@ let НеаCount = 0;
   }
 });
 
-function handleYesClick() {
+function handleДааClick() {
   titleElement.innerHTML = "ДАА!! Жаныым жаным";
   buttonsContainer.classList.add("hidden");
   changeImage("yes");
@@ -40,7 +40,7 @@ function resizeДааButton() {
   ДааButton.style.fontSize = `${newFontSize}px`;
 }
 
-function generateMessage(noCount) {
+function generateMessage(НеаCount) {
   const messages = [
     "Неа",
     "Жаным, ты уверена?",
@@ -50,7 +50,7 @@ function generateMessage(noCount) {
     "Я сейчас буду плакать..",
   ];
 
-  const messageIndex = Math.min(noCount, messages.length - 1);
+  const messageIndex = Math.min(НеаCount, messages.length - 1);
   return messages[messageIndex];
 }
 
@@ -59,5 +59,5 @@ function changeImage(image) {
 }
 
 function updateНеаButtonText() {
-  НеаButton.innerHTML = generateMessage(noCount);
+  НеаButton.innerHTML = generateMessage(НеаCount);
 }
