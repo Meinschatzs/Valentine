@@ -2,8 +2,8 @@
 
 const titleElement = document.querySelector(".title");
 const buttonsContainer = document.querySelector(".buttons");
-const yesButton = document.querySelector(".btn--Даа!");
-const noButton = document.querySelector(".btn--Неа");
+const ДааButton = document.querySelector(".btn--Даа!");
+const НеаButton = document.querySelector(".btn--Неа");
 const catImg = document.querySelector(".cat-img");
 
 const MAX_IMAGES = 5;
@@ -11,16 +11,16 @@ const MAX_IMAGES = 5;
 let play = true;
 let noCount = 0;
 
-yesButton.addEventListener("click", handleYesClick);
+ДааButton.addEventListener("click", handleДааClick);
 
-noButton.addEventListener("click", function () {
+НеаButton.addEventListener("click", function () {
   if (play) {
-    noCount++;
-    const imageIndex = Math.min(noCount, MAX_IMAGES);
+    НеаCount++;
+    const imageIndex = Math.min(НеаCount, MAX_IMAGES);
     changeImage(imageIndex);
-    resizeYesButton();
-    updateNoButtonText();
-    if (noCount === MAX_IMAGES) {
+    resizeДааButton();
+    updateНеаButtonText();
+    if (НеаCount === MAX_IMAGES) {
       play = false;
     }
   }
@@ -32,12 +32,12 @@ function handleYesClick() {
   changeImage("yes");
 }
 
-function resizeYesButton() {
+function resizeДааButton() {
   const computedStyle = window.getComputedStyle(yesButton);
   const fontSize = parseFloat(computedStyle.getPropertyValue("font-size"));
   const newFontSize = fontSize * 1.6;
 
-  yesButton.style.fontSize = `${newFontSize}px`;
+  ДааButton.style.fontSize = `${newFontSize}px`;
 }
 
 function generateMessage(noCount) {
@@ -58,6 +58,6 @@ function changeImage(image) {
   catImg.src = `img/cat-${image}.jpg`;
 }
 
-function updateNoButtonText() {
-  noButton.innerHTML = generateMessage(noCount);
+function updateНеаButtonText() {
+  НеаButton.innerHTML = generateMessage(noCount);
 }
