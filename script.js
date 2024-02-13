@@ -9,7 +9,7 @@ const catImg = document.querySelector(".cat-img");
 const MAX_IMAGES = 5;
 
 let play = true;
-let noCount = 0;
+let НеаCount = 0;
 
 ДааButton.addEventListener("click", handleДааClick);
 
