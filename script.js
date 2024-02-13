@@ -2,8 +2,8 @@
 
 const titleElement = document.querySelector(".title");
 const buttonsContainer = document.querySelector(".buttons");
-const yesButton = document.querySelector(".btn--yes");
-const noButton = document.querySelector(".btn--no");
+const yesButton = document.querySelector(".btn--Даа!");
+const noButton = document.querySelector(".btn--Неа");
 const catImg = document.querySelector(".cat-img");
 
 const MAX_IMAGES = 5;
@@ -27,7 +27,7 @@ noButton.addEventListener("click", function () {
 });
 
 function handleYesClick() {
-  titleElement.innerHTML = "Yayyy!! :3";
+  titleElement.innerHTML = "ДАА!! Жаныым жаным";
   buttonsContainer.classList.add("hidden");
   changeImage("yes");
 }
@@ -42,12 +42,12 @@ function resizeYesButton() {
 
 function generateMessage(noCount) {
   const messages = [
-    "No",
-    "Are you sure?",
-    "Pookie please",
-    "Don't do this to me :(",
-    "You're breaking my heart",
-    "I'm gonna cry...",
+    "Неа",
+    "Жаным, ты уверена?",
+    "Точно точноо?",
+    "Тууй жан :(",
+    "Ты дурашкаа..",
+    "Я сейчас буду плакать..",
   ];
 
   const messageIndex = Math.min(noCount, messages.length - 1);
